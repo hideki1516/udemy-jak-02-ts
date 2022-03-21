@@ -25,7 +25,7 @@ function App() {
     <div className="App">
       <button onClick={onClickFetchData}>データ取得</button>
       {todos.map((todo) => (
-        <Todo title={todo.title} userId={todo.userId}  />
+        <Todo key={todo.id} title={todo.title} userId={todo.userId} completed={todo.completed} />
       ))}
     </div>
   );
