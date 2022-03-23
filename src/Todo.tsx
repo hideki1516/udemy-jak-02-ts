@@ -1,13 +1,14 @@
+import { TodoType } from './types/todo';
 
-type TodoType = {
-  userId: number;
-  title: string;
-  completed?: boolean;// ?を付けることで必須ではない値を明示できる
-};
+// props: Pick<T, 'aaa' | 'bbb'>
+// 型「T」から使用する要素'aaa'と'bbb'を抜き出す
 
-export const Todo = (props: TodoType) => {
+// props: Omit<T, 'ccc'>
+// 型「T」から使用しない要素'ccc'を省略する
+
+export const Todo = (props: Omit<TodoType, 'id'>) => {
   // ?を付ける代わりにcompletedの初期値を設定しておく
-  // → completedにundefinedが渡ってくる可能性もあるため
+  // → completedにundefinedが渡ってくる可能性もあるた
   const { title, userId, completed = false } = props;
   // 三項演算子：completedがfalseの場合は[未]を代入
   const completeMark = completed ? '[完]' : '[未]';

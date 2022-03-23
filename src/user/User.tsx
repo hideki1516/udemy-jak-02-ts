@@ -1,18 +1,11 @@
-import { type } from "os";
+import { UserType } from '../types/user';
 
-type UserType = {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-};
-
-export const User = (props: UserType) => {
-  const { id, name, username, email } = props;
+export const User = (props: Pick<UserType, 'name' | 'username' | 'email'>) => {
+  const { name, username, email } = props;
 
   return (
     <>
-      <p>{`id:${id}　name:${name}　username:${username}　email:${email}`}</p>
+      <p>{`name:${name}　userName:${username}　email:${email}`}</p>
     </>
   );
 };
