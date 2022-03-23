@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import axios from 'axios';
 import { Todo } from './Todo';
+import { Text } from './Text'
 import { User } from './user/User'
 import { TodoType } from './types/todo';
 import { UserType } from './types/user';
@@ -26,6 +27,7 @@ function App() {
 
   return (
     <div className="App">
+      <Text color='red' fontSize='18px' />
       <button onClick={onClickFetchData}>データ取得</button>
       <button onClick={onClickUsersData}>データ取得</button>
       {todos.map((todo) => (
