@@ -6,9 +6,25 @@ import { Text } from './Text'
 import { User } from './user/User'
 import { TodoType } from './types/todo';
 import { UserType } from './types/user';
+import { UserProfile } from './UserProfile';
+import { User2 } from './types/user2';
+import { ProductDetail } from './ProductDetail';
+import { Product } from './types/product';
+
+const user: User2 = {
+  name: 'じゃけぇ',
+  // hobbies: ['映画', 'ゲーム'],
+}
+
+const product: Product = {
+  name: 'アクセサリーA',
+  creator: 'Hide',
+  commitment: ['色合い', '利便性'],
+  comments: '色合いと利便性にこだわりました。',
+  price: 1200,
+}
 
 function App() {
-  // stateの型定義
   const [todos, setTodos] = useState<Array<TodoType>>([]);
 
   const [users, setUsers] = useState<Array<UserType>>([]);
@@ -27,6 +43,8 @@ function App() {
 
   return (
     <div className="App">
+      <ProductDetail product={product} />
+      <UserProfile user={user} />
       <Text color='red' fontSize='18px' />
       <button onClick={onClickFetchData}>データ取得</button>
       <button onClick={onClickUsersData}>データ取得</button>
